@@ -29,6 +29,7 @@ public class TaskExecutorImpl implements TaskExecutor {
         TaskExecutor stub = (TaskExecutor)UnicastRemoteObject.exportObject(engine, 33000);
         Registry registry = LocateRegistry.createRegistry(1099);
         registry.rebind("TaskExecutor", stub);
+        System.out.println("TaskExecutor bound");
     }
 
 }
